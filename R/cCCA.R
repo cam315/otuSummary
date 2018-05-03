@@ -2,8 +2,8 @@ cCCA <- function(otutab, env, mySite=NULL,scale=FALSE,choices=1:2,display = "sit
                  showsite = FALSE,legPos ='bottomright', saveplot = FALSE, ...){
   obj <- cca(otutab, env, scale = scale)
   axes = paste0('CCA', choices)
-  xlbl = paste(axes[1], getpropX(obj))
-  ylbl = paste(axes[2], getpropY(obj))
+  xlbl = paste(axes[1], getpropX(obj, choices))
+  ylbl = paste(axes[2], getpropY(obj, choices))
   pchx <- pchChoose(mySite)
   my.col <- colChoose(mySite)
   if(is.null(mySite)) {my.site = as.factor(rep('site',nrow(otutab)))
