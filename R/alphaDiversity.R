@@ -25,10 +25,10 @@ alphaDiversity <- function(otutab, siteInCol = FALSE, taxhead = NULL, threshold 
     shannon = diversity(data[[i]], "shannon"),
     simperson = diversity(data[[i]], "simpson"),
     invsimperson = diversity(data[[i]], "invsimpson"),
-    chao1 = apply(data[[i]], 1, function(x) chao1(x)),
-    chao2 = apply(data[[i]], 1, function(x) chao2(x)),
+    chao1 = apply(data[[i]], 1, function(x) fossil::chao1(x)),
+    chao2 = apply(data[[i]], 1, function(x) fossil::chao2(x)),
     evenness = diversity(data[[i]], "shannon")/specnumber(data[[i]]),
-    Gini = apply(data[[i]], 1, function(x) gini(x))
+    Gini = apply(data[[i]], 1, function(x) reldist::gini(x))
   ))
   names(result) = c("allBio","abundBio","rareBio")
   if(write){
