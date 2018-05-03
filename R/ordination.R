@@ -1,4 +1,6 @@
-ordination <- function(otutab, env=NULL, SiteInRow=TRUE, percent=TRUE, mySite=NULL, ordtype ='urda', display = "sites", biplot=FALSE, legPos ='bottomright', showsite = FALSE, saveplot = FALSE, ...){
+ordination <- function(otutab, env=NULL, SiteInRow=TRUE, percent=TRUE, mySite=NULL, ordtype ='urda',
+                       scale = TRUE, display = "sites", choices = 1:2, biplot=FALSE,
+                       legPos ='bottomright', showsite = FALSE, saveplot = FALSE, ...){
   message(rep('=',70))
   message("For unconstained ordination, ordtype options c('urda','ucca','unmds')")
   message("For constained ordination, ordtype options c('c_rda','c_cca','c_nmds')")
@@ -11,29 +13,29 @@ ordination <- function(otutab, env=NULL, SiteInRow=TRUE, percent=TRUE, mySite=NU
   if(is.null(env)){
     message(rep('-',60))
     message('Unconstrained ordination will be processed')
-    if(ordtype=="urda"){
-      uRDA(otutab,scale=FALSE,choices=1:2,
-           display = "sites", showsp=TRUE, ...)
-    } else if (ordtype=="ucca"){
-      uCCA(otutab,scale=FALSE,choices=1:2,
-           display = "sites", showsp=TRUE, ...)
-    } else if (ordtype=="unmds"){
-      nmdsFUN(otutab,scale=FALSE,choices=1:2,
-              display = "sites", showsp=TRUE, ...)
+    if(grepl(ordtype, "urda")){
+      uRDA(otutab,scale= scale, choices = choices,
+           display = display, showsp=TRUE, ...)
+    } else if(grepl(ordtype, "ucca")){
+      uCCA(otutab,scale = scale, choices = choices,
+           display = display, showsp=TRUE, ...)
+    } else if(grepl(ordtype, "unmds")){
+      nmdsFUN(otutab,scale = scale, choices = choices,
+              display = display, showsp=TRUE, ...)
     }else {stop("invalid choice! Please read function tutorial")
     }
   } else{
     message(rep('-',60))
     message('Constrained ordination will be processed')
-    if(ordtype=="c_cca"){
-      cCCA(otutab,scale=FALSE,choices=1:2,
-           display = "sites", showsp=TRUE, ...)
-    } else if(ordtype=="c_rda"){
-      cRDA(otutab,scale=FALSE,choices=1:2,
-           display = "sites", showsp=TRUE, ...)
-    } else if(ordtype=="c_nmds"){
-      nmdsFUN(otutab,scale=FALSE,choices=1:2,
-              display = "sites", showsp=TRUE, ...)
+    if(grepl(ordtype, "c_cca")){
+      cCCA(otutab,env,scale = scale,choices = choices,
+           display = display, showsp=TRUE, ...)
+    } else if(grepl(ordtype, "c_rda")){
+      cRDA(otutab,env, scale = scale,choices = choices,
+           display = display, showsp=TRUE, ...)
+    } else if(grepl(ordtype, "c_nmds")){
+      nmdsFUN(otutab, env, scale = scale,choices = choices,
+              display = display, showsp=TRUE, ...)
     }else {stop("invalid choice! Please read function tutorial")
     }
   }
