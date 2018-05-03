@@ -1,7 +1,9 @@
-uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:2, biplot = FALSE, display = "sites", 
-                 showsp = TRUE, legPos ='bottomright', saveplot = FALSE, ...){
-  if(scale) obj <- cca(otutab, scale=TRUE)
-  else obj <- cca(otutab)
+uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:2,
+                 biplot = FALSE, display = "sites", showsp = TRUE, legPos ='bottomright',
+                 saveplot = FALSE, ...){
+  # if(scale) obj <- cca(otutab, scale=TRUE)
+  # else obj <- cca(otutab)
+  obj <- cca(otutab, scale = scale)
   print(summary(obj))
 
   pchx = pchChoose(mySite)
@@ -15,7 +17,7 @@ uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:
   legends= TRUE}
 
   if(biplot){
-    biplot(obj, scaling = 3, cex.lab=1.5,cex.axis=1.2,
+    biplot(obj, scaling = 3, choices = choices, cex.lab=1.5,cex.axis=1.2,
            main = "Unconstrained CA biplot - scaling 3", choices=choices)
     if(legends){
       legs = levels(mySite)
@@ -28,15 +30,15 @@ uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:
       dev.copy2pdf(file = paste0("Unconstained_CA_plot_",deparse(substitute(otutab)),".pdf"),
                    useDingbats = FALSE)
   }else{
-    plot(obj,type="n",xlab = xlbl, ylab = ylbl, cex.lab = 1.5, cex.axis=1.2,
-         main = paste0("Unconstrained CA plot for ", deparse(substitute(otutab))), ...)
+    plot(obj,type="n",xlab = xlbl, ylab = ylbl, cex.lab = 1.5, cex.axis=1.2,choices = choices,
+         main = paste0("Unconstrained CA plot for ",deparse(substitute(otutab))), ...)
     abline(h=0,v=0,lty="dashed", col="grey")
-    points(obj, display="sites", cex=1.2, pch= pchx[my.site],
+    points(obj, display="sites", choices = choices, cex=1.2, pch= pchx[my.site],
            col=my.col[my.site], bg=my.col[my.site], choices=choices)
-    text(obj,display="sites", cex=0.9, col=my.col[my.site],adj=-0.1)
+    text(obj,display="sites", choices = choices, cex=0.9, col=my.col[my.site],adj=-0.1)
     if(showsp){
-      points(obj, display="sp",cex=0.9,pch= '+',col='red', ...)
-      text(obj,display="sp", cex=0.9,col = my.col[my.site],adj=-0.1)
+      points(obj, display="sp",choices = choices, cex=0.9,pch= '+',col='red', ...)
+      text(obj,display="sp", choices = choices, cex=0.9,col = my.col[my.site],adj=-0.1)
     }
     if(legends){
       legs = levels(mySite)
