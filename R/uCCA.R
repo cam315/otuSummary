@@ -7,8 +7,8 @@ uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:
   pchx = pchChoose(mySite)
   my.col = colChoose(mySite)
   axes = paste0('CA', choices)
-  xlbl = paste(axes[1], getpropX(obj))
-  ylbl = paste(axes[2], getpropY(obj))
+  xlbl = paste(axes[1], getpropX(obj, choices))
+  ylbl = paste(axes[2], getpropY(obj, choices))
 
   if(is.null(mySite)) {my.site = as.factor(rep('site',nrow(otutab)))
   legends = FALSE
