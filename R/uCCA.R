@@ -1,15 +1,14 @@
 uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:2,
                  biplot = FALSE, display = "sites", showsp = TRUE, legPos ='bottomright',
                  saveplot = FALSE, ...){
-  # if(scale) obj <- cca(otutab, scale=TRUE)
-  # else obj <- cca(otutab)
   obj <- cca(otutab, scale = scale)
   print(summary(obj))
 
   pchx = pchChoose(mySite)
   my.col = colChoose(mySite)
-  xlbl = paste0('CA1 ', getpropX(obj))
-  ylbl = paste0('CA2 ', getpropY(obj))
+  axes = paste0('CA', choices)
+  xlbl = paste(axes[1], getpropX(obj))
+  ylbl = paste(axes[2], getpropY(obj))
 
   if(is.null(mySite)) {my.site = as.factor(rep('site',nrow(otutab)))
   legends = FALSE
