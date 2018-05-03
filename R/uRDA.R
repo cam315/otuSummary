@@ -1,4 +1,5 @@
-uRDA <- function(otutab,env = NULL, mySite=NULL, scale=FALSE, biplot=FALSE, choices=1:2, display = "sites", showsp=TRUE, legPos ='bottomright',saveplot=FALSE, ...){
+uRDA <- function(otutab,env = NULL, mySite=NULL, scale=FALSE, biplot=FALSE, choices=1:2, display = "sites", showsp=TRUE, 
+                 legPos ='bottomright',saveplot=FALSE, ...){
   if(scale) obj <- rda(otutab, scale= TRUE)
   else obj <- rda(otutab)
   print(summary(obj))
