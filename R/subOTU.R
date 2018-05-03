@@ -1,5 +1,5 @@
 subOTU <- function(otutab, siteInCol = TRUE, taxhead = NULL, percent = TRUE, choose = "rare",
-threshold = 1, outype="Relabund", sort = TRUE, write=FALSE){
+                   threshold = 1, outype="Relabund", sort = TRUE, write=FALSE){
   message(paste("You select to subset the",choose,"data"))
   if (!siteInCol) {
     message("Site headers not in columns, will be transposed")
