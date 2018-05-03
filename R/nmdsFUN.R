@@ -10,8 +10,8 @@ nmdsFUN <- function(otutab, env=NULL, mySite=NULL, choices=1:2, display = "sites
     legends = TRUE}
   print(summary(obj))
   axes = paste0("NMDS", choices)
-  xlbl = paste(axes[1], getpropX(obj))
-  ylbl = paste(axes[2], getpropY(obj))
+  xlbl = paste(axes[1], getpropX(obj, choices))
+  ylbl = paste(axes[2], getpropY(obj, choices))
   if(is.null(env)){
     plot(obj,type="n",xlab = xlbl, ylab = ylbl, cex.lab = 1.5,
          cex.axis=1.2, display = display, choices = choices,
