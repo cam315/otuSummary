@@ -1,29 +1,28 @@
-nmdsFUN <- function(otutab, env=NULL, mySite=NULL, scale=FALSE, choices=1:2,
-                    display = "sites", showsp=TRUE, legPos ='bottomright',
-                    saveplot=TRUE, ...){
+nmdsFUN <- function(otutab, env=NULL, mySite=NULL, choices=1:2, display = "sites",
+                    showsp=TRUE, legPos ='bottomright', saveplot=FALSE, ...){
   set.seed(2)
-  if(scale) obj <-  metaMDS(otutab, k = 3,trymax =25, distance="bray")
-  else obj <- metaMDS(otutab, k = 3,trymax = 25, distance="bray")
+  obj <- metaMDS(otutab, k = 3,trymax = 25, distance="bray")
   pchx = pchChoose(mySite)
   my.col = colChoose(mySite)
-  if(is.null(mySite)) {my.site = as.factor(rep('site',nrow(otutab)))
+  if(is.null(mySite)) {my.site = as.factor(rep("site",nrow(otutab)))
     legends = FALSE
   } else { my.site = mySite
-    legends= TRUE}
+    legends = TRUE}
   print(summary(obj))
-  xlbl = "NMD1"
-  ylbl = "NMD2"
+  axes = paste0("NMDS", choices)
+  xlbl = paste(axes[1], getpropX(obj))
+  ylbl = paste(axes[2], getpropY(obj))
   if(is.null(env)){
     plot(obj,type="n",xlab = xlbl, ylab = ylbl, cex.lab = 1.5,
-         cex.axis=1.2,
+         cex.axis=1.2, display = display, choices = choices,
          main = paste0("NMDs plot for ",deparse(substitute(otutab))))
     abline(h=0,v=0,lty="dashed",col="grey")
-    points(obj, display="si",cex=1.2,pch= pchx[my.site],
+    points(obj, display="si", choices = choices, cex=1.2,pch= pchx[my.site],
            col=my.col[my.site],bg=my.col[my.site])
-    text(obj,display="si", cex=0.9,col=my.col[my.site],adj=-0.1)
+    text(obj,display="si", choices = choices, cex=0.9,col=my.col[my.site],adj=-0.1)
     if(showsp){
-      points(obj, display="sp",cex=0.9,pch= '+',col='red')
-      text(obj,display="sp", cex=0.9,col = my.col[my.site],adj=-0.1)
+      points(obj, display="sp", choices = choices, cex=0.9,pch= '+',col='red')
+      text(obj, display="sp", choices = choices, cex=0.9,col = my.col[my.site],adj=-0.1)
     }
     if(legends){
       legs = levels(mySite)
@@ -35,14 +34,15 @@ nmdsFUN <- function(otutab, env=NULL, mySite=NULL, scale=FALSE, choices=1:2,
     if(saveplot)
       dev.copy2pdf(file = paste0("NMDs_plots_",deparse(substitute(otutab)),".pdf"), useDingbats=FALSE)
   } else{
-    efit <- envfit(obj, env, permutations = 999, strata = NULL,choices=c(1,2),display = "sites", w = weights(obj), na.rm = FALSE)
-    plot(obj,type="n",xlab = xlbl, ylab = ylbl, cex.lab = 1.5, cex.axis=1.2,  main = paste0("NMDs plot with env for ",deparse(substitute(otutab))))
-    points(obj, display="si",cex=1.2,pch= pchx[my.site],    col=my.col[my.site],bg=my.col[my.site])
-    text(obj, display="si", cex=0.9,col=my.col[my.site],adj=-0.1)
+    efit <- envfit(obj, env, permutations = 999, strata = NULL,choices=c(1,2), display = "sites", w = weights(obj), na.rm = FALSE)
+    plot(obj,type="n",xlab = xlbl, ylab = ylbl, cex.lab = 1.5, cex.axis=1.2, choices = choices,
+         main = paste0("NMDs plot with env for ",deparse(substitute(otutab))))
+    points(obj, display="si",choices = choices, cex=1.2,pch= pchx[my.site],col=my.col[my.site],bg=my.col[my.site])
+    text(obj, display="si", choices = choices, cex=0.9,col=my.col[my.site],adj=-0.1)
     plot(efit, col='red', p.max = 0.05)
     if(showsp){
-      points(obj, display = "sp",cex = 0.9,pch = '+',col = 'red')
-      text(obj,display = "sp", cex = 0.9, col = my.col[my.site],adj = -0.1)
+      points(obj, display = "sp", choices = choices, cex = 0.9,pch = '+',col = 'red')
+      text(obj, display = "sp", choices = choices, cex = 0.9, col = my.col[my.site],adj = -0.1)
     }
     if(legends){
       legs = levels(mySite)
