@@ -8,7 +8,7 @@ Suggestion: please install this package in R3.3 or R3.5 on windows (available at
 How to install?
 
 if(!require(devtools)){
-  install.packages("devtools")
+  install.packages("devtools");
   library(devtools)}
   
 install_github("camel315/otuSummary")
