@@ -1,4 +1,5 @@
-rareBiosphere <- function(otutab, siteInCol = TRUE, taxhead= NULL, percent=FALSE, threshold = 1, cutRatio = 100, cutPERare = 5, ...) {
+rareBiosphere <- function(otutab, siteInCol = TRUE, taxhead= NULL, percent=FALSE, threshold = 1, cutRatio = 100, 
+                          cutPERare = 5, ...) {
   if(percent) stop("This function only work for OTUs with absolute reads!")
 
   if(!siteInCol){
