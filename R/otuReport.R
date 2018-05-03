@@ -1,4 +1,5 @@
-otuReport <- function(otutab, siteInCol=TRUE, taxhead='taxonomy', platform ='mothur', pattern=';', prefix=TRUE, percent=FALSE, level='phylum', collap = "->"){
+otuReport <- function(otutab, siteInCol=TRUE, taxhead='taxonomy', platform ='mothur', pattern=';', prefix=TRUE, 
+                      percent=FALSE, level='phylum', collap = "->"){
   message(rep('= = ',times = 15))
   message('Data checking ... ')
   taxlab = tolower(taxhead)
