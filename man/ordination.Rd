@@ -39,7 +39,7 @@ Logical, whether scale species to unit variance (like correlations).
 Character, to access scores for "sites" or "species".
 }
   \item{choices}{
-Numeric, axes to be shown, e.g. choices=1:2.
+Numeric, vector of length two. Specify which axes to be shown, e.g. choices=1:2, choices=c(1,3).
 }
   \item{biplot}{
 Logical, draws a biplot with species scores indicated by biplot arrows, only works in unconstained ordination.
