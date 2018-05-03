@@ -1,5 +1,5 @@
-uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:2, biplot = FALSE, display
- = "sites", showsp = TRUE, legPos ='bottomright', saveplot = FALSE, ...){
+uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:2, biplot = FALSE, display = "sites", 
+                 showsp = TRUE, legPos ='bottomright', saveplot = FALSE, ...){
   if(scale) obj <- cca(otutab, scale=TRUE)
   else obj <- cca(otutab)
   print(summary(obj))
@@ -29,7 +29,7 @@ uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:
                    useDingbats = FALSE)
   }else{
     plot(obj,type="n",xlab = xlbl, ylab = ylbl, cex.lab = 1.5, cex.axis=1.2,
-         main = paste0("Unconstrained CA plot for ",deparse(substitute(otutab))), ...)
+         main = paste0("Unconstrained CA plot for ", deparse(substitute(otutab))), ...)
     abline(h=0,v=0,lty="dashed", col="grey")
     points(obj, display="sites", cex=1.2, pch= pchx[my.site],
            col=my.col[my.site], bg=my.col[my.site], choices=choices)
