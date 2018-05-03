@@ -1,10 +1,10 @@
 cRDA <- function(otutab, env, mySite=NULL, scale=FALSE,choices=1:2, display = "sites",
                  showsite = FALSE, legPos ='bottomright', saveplot= FALSE, ...){
-  if(scale) obj <- rda(otutab, env, scale = TRUE)
-  else obj <- rda(otutab, env)
+  obj <- rda(otutab, env, scale = scale)
   print(summary(obj))
-  xlbl = paste0('RDA1 ', getpropX(obj))
-  ylbl = paste0('RDA2 ', getpropY(obj))
+  axes = paste0('RDA', choices)
+  xlbl = paste(axes[1], getpropX(obj))
+  ylbl = paste(axes[2], getpropY(obj))
   pchx = pchChoose(mySite)
   my.col = colChoose(mySite)
 
@@ -13,12 +13,12 @@ cRDA <- function(otutab, env, mySite=NULL, scale=FALSE,choices=1:2, display = "s
   } else { my.site = mySite
     legends= TRUE}
   plot(obj, main=paste0("Constrained RDA plot for ",deparse(substitute(otutab))),
-       xlab = xlbl, ylab = ylbl, cex.lab = 1.5, cex.axis=1.2)
-  spe.sc <- scores(obj, choices=1:2, scaling=2,display='sp')
+       choices=choices, xlab = xlbl, ylab = ylbl, cex.lab = 1.5, cex.axis=1.2)
+  spe.sc <- scores(obj, choices=choices, scaling=2,display='sp')
   arrows(0,0,spe.sc[,1], spe.sc[,2],length=0, lty=1,col='red')
-  text(obj,display="si", cex=0.9,col=my.col[my.site],adj=-0.1)
+  text(obj,display="si",choices=choices, cex=0.9,col=my.col[my.site],adj=-0.1)
   if(showsite){
-    sit.sc <- scores(obj, choices=1:2, scaling=2, display='si')
+    sit.sc <- scores(obj, choices=choices, scaling=2, display='si')
     points(sit.sc[,1],sit.sc[,2],pch= pchx[my.site],col=my.col[my.site])
     text(sit.sc[,1],sit.sc[,2], labels=rownames(sit.sc),
          cex=0.9,col=my.col[my.site],adj=-0.1)
