@@ -3,8 +3,8 @@ cRDA <- function(otutab, env, mySite=NULL, scale=FALSE,choices=1:2, display = "s
   obj <- rda(otutab, env, scale = scale)
   print(summary(obj))
   axes = paste0('RDA', choices)
-  xlbl = paste(axes[1], getpropX(obj))
-  ylbl = paste(axes[2], getpropY(obj))
+  xlbl = paste(axes[1], getpropX(obj, choices))
+  ylbl = paste(axes[2], getpropY(obj, choices))
   pchx = pchChoose(mySite)
   my.col = colChoose(mySite)
 
