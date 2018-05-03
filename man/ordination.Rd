@@ -8,9 +8,9 @@ Function to quickly check the constrained or unconstrained ordination plot.
 This is a wrapped function to quickly generate a diagnostic ordination plot. It can visualize the rda and cca, either in constrained or unconstrained, as well as the NMDs.
 }
 \usage{
-ordination(otutab, env=NULL, SiteInRow=TRUE, percent=TRUE, mySite=NULL,
-    ordtype ='urda', display = "sites", biplot=FALSE,
-    legPos ='bottomright', showsite = FALSE, saveplot = FALSE, ...)
+ordination(otutab, env=NULL, SiteInRow=TRUE, percent=TRUE, mySite=NULL, ordtype ='urda',
+    scale = TRUE, display = "sites", choices = 1:2, biplot=FALSE, legPos ='bottomright',
+    showsite = FALSE, saveplot = FALSE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -32,8 +32,14 @@ Factor, specify the sample grouping in the ordination plot, which is NULL by def
   \item{ordtype}{
 Character, specify the type of ordination, the valid choice are c('urda','ucca','unmds') for unconstrained ordination, and c('c_rda','c_cca','c_nmds') for constained ones.
 }
+  \item{scale}{
+Logical, whether scale species to unit variance (like correlations).
+}
   \item{display}{
 Character, to access scores for "sites" or "species".
+}
+  \item{choices}{
+Numeric, axes to be shown, e.g. choices=1:2.
 }
   \item{biplot}{
 Logical, draws a biplot with species scores indicated by biplot arrows, only works in unconstained ordination.
@@ -84,7 +90,7 @@ ordination(otutab = varespec, env=NULL, SiteInRow=TRUE, percent=FALSE,
     legPos ='bottomright', showsite = FALSE, saveplot = FALSE)
 ordination(otutab = varespec, env=varechem, SiteInRow=TRUE, percent=FALSE,
     mySite=NULL, ordtype ='c_rda', display = "sites", biplot=FALSE,
-    legPos ='bottomright', showsite = FALSE, saveplot = FALSE)
+    legPos ='bottomright', showsite = FALSE, scale=TRUE, saveplot = FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
