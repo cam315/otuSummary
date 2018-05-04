@@ -27,7 +27,7 @@ uRDA <- function(otutab,env = NULL, mySite=NULL, scale=FALSE, biplot=FALSE, choi
     }
   } else {
     plot(obj,type="n",xlab = xlbl, ylab = ylbl, cex.lab = 1.5, cex.axis=1.2, choices=choices,
-         main = paste0("Unconstrained RDA plot for ", deparse(substitute(otutab))))
+         main = paste("Unconstrained RDA plot for", deparse(substitute(otutab))))
     abline(h=0,v=0,lty="dashed",col="grey")
     points(obj, display="si",cex=1.2,pch= pchx[my.site], choices = choices,
            col=my.col[my.site], bg=my.col[my.site], ...)
