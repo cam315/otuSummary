@@ -10,7 +10,7 @@ How to install this package from github?
     if(!require(devtools)){
       install.packages("devtools")
       library(devtools)
-    } else {library(devtools)}
+    } 
   
     install_github("camel315/otuSummary")
 
