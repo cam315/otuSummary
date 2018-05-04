@@ -10,10 +10,6 @@ A dataset containing bacterial counts from the North Temperate Lakes Microbial O
 \usage{data("otumothur")}
 \format{
   A dataframe with 454 columns (453 samples plus 1 taxonomy) and 591 rows (OTUs). The taxonomy is given in mothur format, with hierarchical taxonomy from kingdom to species sperated with semiclone.
-  \describe{
-%%  \item{\code{x}}{a numeric vector}
-%%  \item{\code{y}}{a numeric vector}
-  }
 }
 \details{
 The full version of the dataset is published in Msphere (Linz et al 2017). The first two letters of sample names denote the sampling site (e.g. "CB"), followed with epilimnion or hypolimnion ("E" or "H") and sampling date ("01OCT0"). The original data set have replicates ('R1' and 'R2'), this dataset only extracted the subset of 'R2' (with extension ".R2" in sample names). The data set is identical to otuqiime except for the taxonomy is in mothur format.
