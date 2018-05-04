@@ -10,8 +10,6 @@ A dataset containing bacterial counts from the North Temperate Lakes Microbial O
 \usage{data("otuqiime")}
 \format{
   A dataframe with 454 columns (453 samples plus 1 taxonomy) and 591 rows (OTUs).
-  \describe{
-  }
 }
 \details{
 The first two letters of sample names denote the sampling site (e.g. "CB"), followed with epilimnion or hypolimnion ("E" or "H") and sampling date ("01OCT0"). The original data set have replicates ('R1' and 'R2'), this dataset only extracted the subset of 'R2' (with extension ".R2" in sample names).
