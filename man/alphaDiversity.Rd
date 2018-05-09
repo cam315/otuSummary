@@ -2,7 +2,7 @@
 \alias{alphaDiversity}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Function to calculate the alpha diversity indices
+Calculate the alpha diversity indices
 }
 \description{
 This function will calculate the alpha diversity indices for the total, abundant and rare biospheres.
@@ -17,7 +17,7 @@ alphaDiversity(otutab, siteInCol = FALSE, taxhead = NULL, threshold = 1,
 A otu table of microbial community, which can contain a taxonomic column (if siteInCol) or row (if site in rows). The otu table can be given in numeric counts or in relative
 }
   \item{siteInCol}{
-Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. By default in this function, the siterInCol is FALSE, meaning the samples in rows.
+Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. By default in this function, the siteInCol is FALSE, meaning the samples in rows.
 }
   \item{taxhead}{
 Character, specify the header of taxonomy. By default this argument is NULL.
@@ -32,7 +32,7 @@ Logical, whether the input otu table are given in relative abundance. FALSE mean
 Logical, if TRUE, the result will be written out in txt format.
 }
   \item{...}{
-arguments to be passed to write.table.
+arguments to be passed to write.table().
 }
 }
 \details{
@@ -41,9 +41,9 @@ The rare biosphere is defined by the relative abundance cutoffs (which is the "t
 \value{
 The function will return a list of length 3, including indices of observed, shannon, simpson, invsimpson, chao1, chao2, evenness and Gini.
 %%  If it is a LIST, use
-\item{allBio }{The alpha diversity indices for the whole commnity}
-\item{abundBio }{The alpha diverisity indices for the abundant population}
-\item{rareBio }{The alpha diverisity indices for the rare biosphere}
+\item{allBio }{The alpha diversity indices for the whole community}
+\item{abundBio }{The alpha diversity indices for the abundant population}
+\item{rareBio }{The alpha diversity indices for the rare biosphere}
 }
 \references{
 Lynch MDJ, Neufeld JD (2015). Ecology and exploration of the rare biosphere. Nature Reviews Microbiology 13: 217-229.
@@ -75,6 +75,5 @@ test2 <- alphaDiversity(otutab = otumothur[,-454], siteInCol = TRUE,
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{summarize }% use one of  RShowDoc("KEYWORDS")
 
