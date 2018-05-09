@@ -2,26 +2,26 @@
 \alias{ordination}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Function to quickly check the constrained or unconstrained ordination plot.
+Quickly check the constrained or unconstrained ordination plot
 }
 \description{
 This is a wrapped function to quickly generate a diagnostic ordination plot. It can visualize the rda and cca, either in constrained or unconstrained, as well as the NMDs.
 }
 \usage{
-ordination(otutab, env=NULL, SiteInRow=TRUE, percent=TRUE, mySite=NULL, ordtype ='urda',
-    scale = TRUE, display = "sites", choices = 1:2, biplot=FALSE, legPos ='bottomright',
+ordination(otutab, env=NULL, SiteInRow=TRUE, percent=TRUE, mySite=NULL, ordtype ="urda",
+    scale = TRUE, display = "sites", choices = 1:2, biplot=FALSE, legPos ="bottomright",
     showsite = FALSE, saveplot = FALSE, ...)
 }
-%- maybe also 'usage' for other objects documented here.
+%- maybe also "usage" for other objects documented here.
 \arguments{
   \item{otutab}{
 A otu table of microbial community, without a taxonomy column.
 }
   \item{env}{
-Optional, a environmental table, which should contains the same samples as the otu table. If given, a constained ordination will be processed. If env is NULL as defualt, the ordination will be unconstrained.
+Optional, a environmental table, which should contains the same samples as the otu table. If given, a constrained ordination will be processed. If env is NULL as default, the ordination will be unconstrained.
 }
   \item{SiteInRow}{
-Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows, for this function is dependent on vegan functions and thus follows its data requirement. The function will also transpose the otu table if "SiteInRow"" is FALSE.
+Logical, if "TRUE", the OTU table contains samples in rows and taxa in columns, as this function is dependent on several vegan functions and thus follows its data format. The function will transpose the otu table if "SiteInRow" is FALSE.
 }
   \item{percent}{
 Logical, specify whether the input otu table are in relative abundance.
@@ -30,7 +30,7 @@ Logical, specify whether the input otu table are in relative abundance.
 Factor, specify the sample grouping in the ordination plot, which is NULL by default.
 }
   \item{ordtype}{
-Character, specify the type of ordination, the valid choice are c('urda','ucca','unmds') for unconstrained ordination, and c('c_rda','c_cca','c_nmds') for constained ones.
+Character, specify the type of ordination, the valid choice are c("urda","ucca","unmds") for unconstrained ordination, and c("c_rda","c_cca","c_nmds") for constrained ones.
 }
   \item{scale}{
 Logical, whether scale species to unit variance (like correlations).
@@ -42,29 +42,29 @@ Character, to access scores for "sites" or "species".
 Numeric, vector of length two. Specify which axes to be shown, e.g. choices=1:2, choices=c(1,3).
 }
   \item{biplot}{
-Logical, draws a biplot with species scores indicated by biplot arrows, only works in unconstained ordination.
+Logical, draws a biplot with species scores indicated by biplot arrows, only works in unconstrained ordination.
 }
   \item{legPos}{
-Character, the position of the legend in the plot. The valid choices are c('topleft','topright', 'bottomleft' and 'bottomright')
+Character, the position of the legend in the plot. The valid choices are c("topleft", "topright", "bottomleft" and "bottomright")
 }
   \item{showsite}{
 Logical, whether show the site labels in the ordination.
 }
   \item{saveplot}{
-Logical, whether the ordination plot will be saved to your default work directory.
+Logical, whether the ordination plot will be saved to the default work directory.
 }
   \item{...}{
 arguments, including graphical parameters of ordination object in vegan, passed to other methods.
 }
 }
 \details{
-The function wrapped several vegan functions in order to quickly have a diagonotic ordination plot for your data. For better performance and more custom controls on plotting, please use the corresponding vegan functions (Oksanen et al, 2013).
+The function wrapped several vegan functions in order to quickly have a diagnostic ordination plot for your data. For better performance and more custom controls on plotting, please use the corresponding vegan functions (Oksanen et al, 2013).
 }
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
+%%  \item{comp1 }{Description of "comp1"}
+%%  \item{comp2 }{Description of "comp2"}
 %% ...
 }
 \references{
@@ -85,14 +85,15 @@ The vegan manual at https://cran.r-project.org/web/packages/vegan/index.html
 \examples{
 data(varespec)
 data(varechem)
-ordination(otutab = varespec, env=NULL, SiteInRow=TRUE, percent=FALSE,
-    mySite=NULL, ordtype ='urda', display = "sites", biplot=FALSE,
-    legPos ='bottomright', showsite = FALSE, saveplot = FALSE)
-ordination(otutab = varespec, env=varechem, SiteInRow=TRUE, percent=FALSE,
-    mySite=NULL, ordtype ='c_rda', display = "sites", biplot=FALSE,
-    legPos ='bottomright', showsite = FALSE, scale=TRUE, saveplot = FALSE)
+
+ordination(otutab = varespec, env = NULL, SiteInRow = TRUE, percent = FALSE,
+    mySite = NULL, ordtype = "urda", display = "sites", biplot = FALSE,
+    legPos = "bottomright", showsite = FALSE, saveplot = FALSE)
+
+ordination(otutab = varespec, env = varechem, SiteInRow =TRUE, percent=FALSE,
+    mySite = NULL, ordtype = "c_rda", display = "sites", biplot = FALSE,
+    legPos = "bottomright", showsite = FALSE, scale=TRUE)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
+% Add one or more standard keywords, see file "KEYWORDS" in the
 % R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{aplot }% use one of  RShowDoc("KEYWORDS")
