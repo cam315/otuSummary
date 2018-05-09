@@ -2,10 +2,10 @@
 \alias{bplot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-barplot with custom controls on the x axis lebels
+Generate barplot with custom controls on the x axis labels
 }
 \description{
-barplot with custom controls on the x axis lebels, e.g. rotation.
+barplot with custom controls on the x axis labels, e.g. rotation.
 }
 \usage{
 bplot(data, srt = 45, yoff = 0.05, dataoff = 0.025, barcol = "grey", grid = TRUE, ...)
@@ -61,14 +61,16 @@ arguments to be passed to/from other methods.
 }
 \examples{
 data(otumothur)
+
 summaryInfo <- otuReport(otutab=otumothur, siteInCol=TRUE, taxhead='taxonomy',
     platform = 'qiime', percent=FALSE, level='phylum', collap = ";")
+
 length(summaryInfo)
 names(summaryInfo)
 summaryInfo[[1]]
+
 bplot(summaryInfo[["taxaFreqs"]])
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{aplot }% use one of  RShowDoc("KEYWORDS")
