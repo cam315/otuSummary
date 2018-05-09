@@ -52,4 +52,3 @@ mat.m <- matrixConvert(varespec, colname = c("sp1","sp2","bray"))
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{convert }% use one of  RShowDoc("KEYWORDS")
-%%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
