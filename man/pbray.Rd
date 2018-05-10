@@ -28,7 +28,7 @@ Logical, by default the function returns the lower triangular matrix.
     If the input for "allComm" and "subComm" are the same data, the function will return the Bray-Curtis matrix for the whole community.
 }
 \value{
-The function returns a distance matrix by using the subset community by referring to the whole community data.
+The function returns a distance matrix by using the subset community against the whole community data.
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
