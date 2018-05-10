@@ -17,7 +17,7 @@ contrib(otutab, siteInCol=TRUE, taxhead=NULL, threshold = 1, percent=FALSE,
 A OTU table of microbial community, which can contain a column or row of taxonomy.
 }
   \item{siteInCol}{
-Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. The function will also transpose the otu table based on this parameter.
+Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. The function will decide whether to transpose the otu table based on this parameter.
 }
   \item{taxhead}{
 Character, specify the header of taxonomy, e.g. 'taxonomy' if there is a taxonomy column or row. It is NULL by default.
