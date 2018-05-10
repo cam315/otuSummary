@@ -2,7 +2,7 @@
 \alias{pbray}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-function to partition the Bray-Curtis distance dissimilarity
+Function to partition the Bray-Curtis distance dissimilarity
 }
 \description{
 The pbray function partitions the Bray-Curtis distance matrix based on the who community and the subset of the community data.
@@ -23,9 +23,9 @@ Logical, by default the function returns the lower triangular matrix.
 }
 }
 \details{
-The Bray-Curtis dissimilarity is a scaled summation of abundance differences between two communities, it is thus could be partition ed between two samples attributable to a subset of the community (Shade et al., 2014; Yang et al., 2017).
-
-Note, the pbray function requires the input for 'allComm' and 'subComm' consitently in using either counts or relative abundance.
+    The Bray-Curtis dissimilarity is a scaled summation of abundance differences between two communities, it is thus could be partitioned between two samples attributable to a subset of the community (Shade et al., 2014; Yang et al., 2017).
+    Note, the pbray function requires the input for "allComm" and "subComm" keep consistently in either counts or relative abundance.
+    If the input for "allComm" and "subComm" are the same data, the function will return the Bray-Curtis matrix for the whole community.
 }
 \value{
 The function returns a distance matrix by using the subset community by referring to the whole community data.
@@ -40,7 +40,7 @@ Shade A, Jones SE, Caporaso JG, Handelsman J, Knight R, Fierer N, and Gilbert JA
 Yang S, Winkel M, Wagner D, and Liebner S. Community structure of rare methanogenic archaea: insight from a single functional group. FEMS Microbiology Ecology, 2017: fix126.
 }
 \author{
-Sizhong Yang
+Sizhong Yang <yanglzu@163.com>
 }
 \note{
 %%  ~~further notes~~
@@ -54,8 +54,8 @@ function contrib()
 \examples{
 data(otumothur)
 
-subotus <- subOTU(otutab = otumothur, taxhead='taxonomy', siteInCol= TRUE,
-    percent=FALSE, choose = 'rare', outype='counts', sort = FALSE)
+subotus <- subOTU(otutab = otumothur, taxhead = "taxonomy", siteInCol = TRUE,
+    percent=FALSE, choose = "rare", outype = "counts", sort = FALSE)
 pRare <- pbray(allComm = t(otumothur[,-454]), subComm = t(subotus[,-454]))
 class(pRare)
 
@@ -63,7 +63,6 @@ class(pRare)
 
 longdist <- matrixConvert(pRare, colname = c("sp1","sp2","bray"))
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
+% Add one or more standard keywords, see file "KEYWORDS" in the
 % R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{patition }% use one of  RShowDoc("KEYWORDS")
