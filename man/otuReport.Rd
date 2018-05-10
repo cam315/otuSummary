@@ -18,7 +18,7 @@ otuReport(otutab, siteInCol = TRUE, taxhead = 'taxonomy', platform = 'mothur',
 A otu table of microbial community, which must contain a taxonomic column (if siteInCol) or row (if site in rows). The otu table can be given in numeric counts or in relative abundance.
 }
   \item{siteInCol}{
-Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. The function will also transpose the otu table based on this parameter.
+Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. The function will decide whether to transpose the otu table based on this parameter.
 }
   \item{taxhead}{
 Character, specify the header of taxonomy. By default we assume your taxonomic column is entitled 'taxonomy'.
