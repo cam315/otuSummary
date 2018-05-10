@@ -14,8 +14,8 @@ alphaDiversity(otutab, siteInCol = FALSE, taxhead = NULL, threshold = 1,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{otutab}{
-A otu table of microbial community, which can contain a taxonomic column (if siteInCol) or row (if site in rows). The otu table can be given in numeric counts or in relative
-}
+A otu table of microbial community, which can contain a taxonomic column (if siteInCol) or row (if site in rows). The otu table can be given in numeric counts or in relative abundance.
+                                                                                                }
   \item{siteInCol}{
 Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. By default in this function, the siteInCol is FALSE, meaning the samples in rows.
 }
