@@ -79,8 +79,8 @@ subOTU
 # summary the otu table in qiime format
 
 data(otuqiime)
-summaryInfo <- otuReport(otutab=otuqiime, siteInCol=TRUE, taxhead='taxonomy',
-platform ='qiime', pattern=';', prefix=TRUE, percent=FALSE, level='class')
+summaryInfo <- otuReport(otutab = otuqiime, siteInCol = TRUE, taxhead = 'taxonomy',
+    platform = 'qiime', pattern = ';', prefix = TRUE, percent = FALSE, level = 'class')
 length(summaryInfo)
 names(summaryInfo)
 summaryInfo[[1]]
@@ -88,8 +88,8 @@ summaryInfo[[1]]
 # summary otu table in mothur format
 
 data(otumothur)
-summaryInfo <- otuReport(otutab=otumothur, siteInCol=TRUE, taxhead='taxonomy',
-platform ='qiime', pattern=';', percent=FALSE, level='phylum', collap = ";")
+summaryInfo <- otuReport(otutab = otumothur, siteInCol = TRUE, taxhead = 'taxonomy',
+    platform = 'qiime', pattern = ';', percent = FALSE, level = 'phylum', collap = ";")
 length(summaryInfo)
 names(summaryInfo)
 summaryInfo[[1]]
