@@ -2,13 +2,13 @@
 \alias{otuReport}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Function to summarize the community structure and abundance.
+Summarize the community structure and abundance with OTU table
 }
 \description{
-The function will sumarize the frequency, abundance at given taxonomic level for the input OTU table. This function could quickly give the summary information for user when they attempt to add these points in describing the community structure in writing paper.
+The function will summarize the frequency, abundance at given taxonomic level for the input OTU table. This function could quickly give the summary information for user when adding these values in describing the community structure in a paper.
 }
 \usage{
-otuReport(otutab, siteInCol = TRUE, taxhead = 'taxonomy', platform ='mothur',
+otuReport(otutab, siteInCol = TRUE, taxhead = 'taxonomy', platform = 'mothur',
     pattern = ';', prefix = TRUE, percent = FALSE, level = 'phylum',
     collap = "->")
 }
@@ -24,10 +24,10 @@ Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. 
 Character, specify the header of taxonomy. By default we assume your taxonomic column is entitled 'taxonomy'.
 }
   \item{platform}{
-Character, arguement to specify the platform generating the otu table. Currently, the function support otu table generate by 'mothur' or 'qiime'.
+Character, argument to specify the platform generating the otu table. Currently, the function support otu table generate by 'mothur' or 'qiime'.
 }
   \item{pattern}{
-Character, specify the speration of taxonomy. By default, the taxonomy is sperated by semicolon (';').
+Character, specify the separation of taxonomy. By default, the taxonomy is separated by semicolon (';').
 }
   \item{prefix}{
 Logical, tell the function whether the output will include the prefix like 'p__','c__' for the corresponding taxonomic levels.
@@ -39,7 +39,7 @@ Logical, whether the input otu table are given in relative abundance. FALSE mean
 Character, specify the taxonomic level at which you want to know for the otu table. The valid choice are c('kingdom','phylum','class','order','family','genus','species').
 }
   \item{collap}{
-Character, tell the function about the speration for the heirarchical order in the output.
+Character, tell the function about the separation for the hierarchical order in the output.
 }
 }
 \details{
@@ -55,7 +55,7 @@ If the input otu table is in counts, the function will return a list of results 
 \item{readSum }{The 'readSum' gives the total amount of reads in each sample after the community was collapsed at given taxonomic level.}
 \item{readFrac }{The 'readFrac' table give the fraction of reads in relation to the total counts of the whole community at given taxonomic level.}
 \item{readFracSum }{The 'readFracSum' table give sum of reads fraction by different samples at given taxonomic level.}
-\item{Relabund }{The 'Relabund' is the relative abundance table in percentage at given taxonomic level. If the input otu table is in absolute counts, the reads will be normalized by the total amount of reads of each sample, not the total amount of the whole community.  }
+\item{Relabund }{The 'Relabund' is the relative abundance table in percentage at given taxonomic level. If the input otu table is in absolute counts, the reads will be normalized by the total amount of reads of each sample, not the total amount of the whole community.}
 \item{RelabundMean }{The data 'RelabundMean' in the list return the mean relative abundance of each lineage at given taxonomic level across all samples.}
 For the relative abundance otu input, the function will omit four summary table regarding absolute reads ('reads', 'readSum', 'readFrac' and 'readFracSum').
 %% ...
@@ -73,7 +73,6 @@ Sizhong Yang <yanglzu@163.com>
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
 subOTU
 }
 \examples{
@@ -109,5 +108,4 @@ names(summaryInfo)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{summarize }% use one of  RShowDoc("KEYWORDS")
