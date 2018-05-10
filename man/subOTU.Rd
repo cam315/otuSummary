@@ -14,7 +14,7 @@ subOTU(otutab, siteInCol = TRUE, taxhead = NULL, percent = TRUE, choose = "rare"
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{otutab}{
-A otu table of microbial community, which must contain a taxonomic column (if siteInCol) or row (if site in rows). The otu table can be given in numeric counts or in relative abundance.
+A otu table of microbial community, which can contain a taxonomic column (if siteInCol) or row (if site in rows). The otu table can be given in numeric counts or in relative abundance.
 }
   \item{siteInCol}{
 Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. The function will decide whether to transpose the otu table based on this parameter.
