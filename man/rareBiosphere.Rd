@@ -2,10 +2,10 @@
 \alias{rareBiosphere}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-function to summarize different subgroups in the rare biosphere.
+Summarize different subgroups in the rare biosphere
 }
 \description{
-The function descriminates different subgroups of rare biosphere from the input community data, based on the ratio between the maximum and minimum abundance (for details, please see Yang et al. 2017).
+The function discriminates different subgroups of rare biosphere from the input community data, based on the ratio between the maximum and minimum abundance (for details, please see Yang et al. 2017).
 }
 \usage{
 rareBiosphere(otutab, siteInCol = TRUE, taxhead= NULL, percent = FALSE,
@@ -32,26 +32,24 @@ Numeric, the threshold specify the relative abundance cutoff upon which the rare
 Numeric, the cutRatio parameter is the ratio between the maximum and minimum non-zero absolute abundance, which specify the threshold of conditionally rare taxa (CRT).
 }
   \item{cutPERare}{
-Numeric, the argument cutPERare specify the threshold of permenantly rare taxa (PERare) in the community according to the ratio as mentioned above.
+Numeric, the argument cutPERare specify the threshold of permanently rare taxa (PERare) in the community according to the ratio as mentioned above.
 }
   \item{...}{
 arguments to be passed to/from other methods.
 }
 }
 \details{
-The rare biopshere constitutes different fractions of rarity. The conditionally rare taxa (CRT) are generally rare across samples but can become abundant in some samples. In contrast, the permanantly rare taxa (PERare) are persistently low in abundance. Different levels of rarity may have practical implications and suggest potential roles in metabolism and ecological functions (Lynch and Neufeld, 2015; Yang et al., 2017).
-
-This function will filter the rare biophere from the input whole otu table and then descriminate different taxa fractions based on the ratio between the maximum and minimum non-zero absolute abundance, which has been as an technical alternative skewness (please see Yang et al. 2017 for details).
-
-The function only works with otu table with absolute abundance, for the absolute reads enable to identify of absolute singletons and doubletons.
+    The rare biopshere constitutes different fractions of rarity. The conditionally rare taxa (CRT) are generally rare across samples but can become abundant in some samples. In contrast, the permanently rare taxa (PERare) are persistently low in abundance. Different levels of rarity may have practical implications and suggest potential roles in metabolism and ecological functions (Lynch and Neufeld, 2015; Yang et al., 2017).
+    This function will filter the rare biophere from the input whole otu table and then discriminate different taxa fractions based on the ratio between the maximum and minimum non-zero absolute abundance, which has been as an technical alternative skewness (please see Yang et al. 2017 for details).
+    The function only works with otu table with absolute abundance, for the absolute reads enable to identify of absolute singletons and doubletons.
 }
 \value{
-The function returns a list of 4 data frames. Each data frame...
+The function returns a list of 4 data frames.
 %%  If it is a LIST, use
-\item{summaryTable }{The list element 'summaryTable' returns a table present the maximim and the mimimum relative abundance, the ratio of the two abunance, the grouping of rarity, whether the taxa is singleton or doubletons, with additional column of taxonomy if it is included in the input otu table.}
+\item{summaryTable }{The list element 'summaryTable' returns a table present the maximum and the minimum relative abundance, the ratio of the two abundance, the grouping of rarity, whether the taxa is singleton or doubletons, with additional column of taxonomy if it is included in the input otu table.}
 \item{CRT }{Table 'CRT' gives the subset of the above 'summaryTable' only for the conditionally rare taxa.}
 \item{PERare }{Table 'PERare' shows the information of permanently rare taxa.}
-\item{otherRare }{Table 'otherRare' summarizes the rare taxa outside the 'CRT' and 'PERare'}
+\item{otherRare }{Table 'otherRare' summarizes the rare taxa outside the 'CRT' and 'PERare'.}
 %% ...
 }
 \references{
@@ -86,7 +84,7 @@ example2 <- rareBiosphere(otutab = otumothur[,-454], siteInCol = TRUE,
 length(example2)
 names(example2)
 }
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{summarize }% use one of  RShowDoc("KEYWORDS")
