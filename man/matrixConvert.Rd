@@ -16,7 +16,7 @@ matrixConvert(triMatrix, colname = c("sp1","sp2","dist"))
 Matrix, the input matrix should be lower triangular matrix.
 }
   \item{colname}{
-Character, a vector of length 3 to specify the column names of the 3-column after conversion.
+Character, a vector of length 3 to specify the column names of the converted data frame.
 }
 }
 \details{
