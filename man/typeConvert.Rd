@@ -2,10 +2,10 @@
 \alias{typeConvert}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-funciton to transpose the data frame if there is data type conversion.
+Transpose the data frame if there is data type conversion.
 }
 \description{
-funciton to transpose the data frame if there is data type conversion.
+function to transpose the data frame if there is data type conversion.
 }
 \usage{
 typeConvert(otutab,taxhead = NULL)
@@ -23,7 +23,7 @@ Character, specify the header of taxonomy. By default the taxonomic column is NU
 This function is to convert the numeric values into right type so that the downstream numeric calculation could be processed without type error.
 }
 \value{
-This function returns a transposed otu table in which numeric values but showing 'character' or 'factor' in the source otu table is converted to the numeric values.
+This function returns a transposed otu table. In the source otu table the numeric values showing 'character' or 'factor' will be converted to right types.
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
@@ -52,5 +52,4 @@ sapply(new, class)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{convert }% use one of  RShowDoc("KEYWORDS")
