@@ -16,6 +16,7 @@ Suggestion: please install this package in R3.3 or R3.5 on windows (available at
     install_github("camel315/otuSummary")
     
 ##### Check function list
+    library("otuSummary")
     lsf.str("package:otuSummary")
     
 
