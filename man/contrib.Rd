@@ -8,34 +8,34 @@ Contribution of rare/abundant biosphere to the total Bray-Curtis dissimilarity
 function to calculate the contribution (in fraction) of the abundant or rare biosphere to the Bray-Curtis dissimilarity of the whole community.
 }
 \usage{
-contrib(otutab, siteInCol=TRUE, taxhead=NULL, threshold = 1, percent=FALSE,
-    check="rare", write=FALSE, plot=FALSE, ...)
+contrib(otutab, siteInCol = TRUE, taxhead = NULL, threshold = 1, percent = FALSE,
+    check = "rare", write = FALSE, plot = FALSE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{otutab}{
-A OTU table of microbial community, which can contain a column or row of taxonomy.
+An OTU table of microbial community, which can contain taxonomy in a column or a row.
 }
   \item{siteInCol}{
-Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. The function will decide whether to transpose the otu table based on this parameter.
+Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. The function will decide whether to transpose the OTU table based on this parameter.
 }
   \item{taxhead}{
-Character, specify the header of taxonomy, e.g. 'taxonomy' if there is a taxonomy column or row. It is NULL by default.
+Character, specify the header of taxonomy, e.g. "taxonomy" if there is a taxonomy column or row. It is NULL by default.
 }
   \item{threshold}{
 Numeric, the threshold relative abundance cutoff upon which the rare biosphere will be subset.
 }
   \item{percent}{
-Logical, whether the input otu table are in relative abundance.
+Logical, whether the input OTU table are in relative abundance.
 }
   \item{check}{
-Character, either 'rare' or 'abundant', telling the function which biosphere to be check.
+Character, either "rare" or "abundant", telling the function which biosphere to be check.
 }
   \item{write}{
-Logical, if TRUE, the result will be written out as 'txt' file, default is FALSE.
+Logical, if TRUE, the result will be written out as "txt" file, default is FALSE.
 }
   \item{plot}{
-Logical, there the contribution result to be visualized in boxplot. By default is FALSE.
+Logical, whether the contribution result to be visualized in boxplot. By default is FALSE.
 }
   \item{...}{
 arguments to be passed to/from other methods.
@@ -70,7 +70,7 @@ Sizhong Yang <yanglzu@163.com>
 }
 \examples{
 data(otuqiime)
-result <- contrib(otutab = otuqiime, siteInCol=TRUE, taxhead= "taxonomy",
+result <- contrib(otutab = otuqiime, siteInCol = TRUE, taxhead = "taxonomy",
     threshold = 1, percent = FALSE, check = "abund", plot = TRUE)
 names(result)
 head(result)
