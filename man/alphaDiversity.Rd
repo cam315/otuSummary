@@ -14,10 +14,10 @@ alphaDiversity(otutab, siteInCol = FALSE, taxhead = NULL, threshold = 1,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{otutab}{
-A otu table of microbial community, which can contain a taxonomic column (if siteInCol) or row (if site in rows). The otu table can be given in numeric counts or in relative abundance.
-                                                                                                }
+A OTU table of microbial community, which can contain a taxonomic column (if siteInCol) or row (if site in rows). The OTU table can be given in numeric counts or in relative abundance.
+}
   \item{siteInCol}{
-Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. By default in this function, the siteInCol is FALSE, meaning the samples in rows.
+Logical, if "TRUE", the OTU table contains samples in columns and taxa in rows. By default in this function, the siteInCol is FALSE, meaning the samples in rows.
 }
   \item{taxhead}{
 Character, specify the header of taxonomy. By default this argument is NULL.
@@ -26,17 +26,17 @@ Character, specify the header of taxonomy. By default this argument is NULL.
 Numeric, the threshold of relative abundance upon which the rare biosphere will be subset.
 }
   \item{percent}{
-Logical, whether the input otu table are given in relative abundance. FALSE means that the input otu table is in numeric counts.
+Logical, whether the input OTU table are given in relative abundance. FALSE means that the input OTU table is in numeric counts.
 }
   \item{write}{
-Logical, if TRUE, the result will be written out in txt format.
+Logical, if TRUE, the result will be written out in a Tab separated data frame.
 }
   \item{...}{
 arguments to be passed to write.table().
 }
 }
 \details{
-The rare biosphere is defined by the relative abundance cutoffs (which is the "threshold" argument in this function) (Lynch and Neufeld, 2015). This function call the functions "specnumber", "diversity" from package vegan (Oksanen et al, 2017), "chao1" and "chao2" from package fossil (Vavrek, 2011) and the "gini" function from package reldist (http://www.stat.ucla.edu/~handcock/RelDist).
+The rare biosphere is defined by the relative abundance cutoffs (which is the "threshold" argument in this function) (Lynch and Neufeld, 2015). This function call the functions "specnumber", "diversity" from package vegan (Oksanen et al, 2013), "chao1" and "chao2" from package fossil (Vavrek, 2011) and the "gini" function from package reldist (http://www.stat.ucla.edu/~handcock/RelDist).
 }
 \value{
 The function will return a list of length 3, including indices of observed, shannon, simpson, invsimpson, chao1, chao2, evenness and Gini.
@@ -68,12 +68,12 @@ Sizhong Yang <yanglzu@163.com>
 data(otumothur)
 
 test1 <- alphaDiversity(otutab = otumothur, siteInCol = TRUE,
-    taxhead ='taxonomy', threshold = 1, percent = FALSE, write = FALSE)
+    taxhead = "taxonomy", threshold = 1, percent = FALSE, write = FALSE)
 
 test2 <- alphaDiversity(otutab = otumothur[,-454], siteInCol = TRUE,
     taxhead = NULL, threshold = 1, percent = FALSE, write = FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{summarize }% use one of  RShowDoc("KEYWORDS")
+\keyword{summarize }% use one of  RShowDoc('KEYWORDS')
 
