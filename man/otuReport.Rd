@@ -54,7 +54,7 @@ If the input otu table is in counts, the function will return a list of results 
 \item{reads }{The "reads" table is the otu table in absolute counts which has been collapsed at a given taxonomic level.}
 \item{readSum }{The "readSum" gives the total amount of reads in each sample after the community was collapsed at given taxonomic level.}
 \item{readFrac }{The "readFrac" table give the fraction of reads in relation to the total counts of the whole community at given taxonomic level.}
-\item{readFracSum }{The "readFracSum" table give sum of reads fraction by different samples at given taxonomic level.}
+\item{readFracSum }{The "readFracSum" table give sum of reads fraction by different lineages at given taxonomic level.}
 \item{Relabund }{The "Relabund" is the relative abundance table in percentage at given taxonomic level. If the input otu table is in absolute counts, the reads will be normalized by the total amount of reads of each sample, not the total amount of the whole community.}
 \item{RelabundMean }{The data "RelabundMean" in the list return the mean relative abundance of each lineage at given taxonomic level across all samples.}
 For the relative abundance otu input, the function will omit four summary table regarding absolute reads ("reads", "readSum", "readFrac" and "readFracSum").
