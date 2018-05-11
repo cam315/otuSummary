@@ -9,7 +9,7 @@ A data set containing bacterial counts from the North Temperate Lakes Microbial 
 }
 \usage{data("otu4type")}
 \format{
-  A data frame with 591 columns (OTUs) and 454 rows (453 samples plus 1 taxonomy).
+A data frame with 591 columns (OTUs) and 454 rows (453 samples plus 1 taxonomy).
 }
 \details{
 This data show examples of "SiteInRow" if there is a taxonomy rows. When read in, the column with numeric counts will be marked as "factor". This data set could be transposed to correct type with "typeConvert" function.
