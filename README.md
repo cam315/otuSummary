@@ -19,6 +19,9 @@ Suggestion: please install this package in R3.3 or R3.5 on windows (available at
     library("otuSummary")
     lsf.str("package:otuSummary")
     
+##### About citation
+    citation("otuSummary")
+    
 
 
 
