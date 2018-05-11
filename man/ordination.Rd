@@ -9,16 +9,16 @@ This is a wrapped function to quickly generate a diagnostic ordination plot. It 
 }
 \usage{
 ordination(otutab, env=NULL, SiteInRow=TRUE, percent=TRUE, mySite=NULL, ordtype ="urda",
-    scale = TRUE, display = "sites", choices = 1:2, biplot=FALSE, legPos ="bottomright",
-    showsite = FALSE, saveplot = FALSE, ...)
+    scale = TRUE, display = "sites", choices = 1:2, biplot = FALSE,
+    legPos = "bottomright", showsite = FALSE, saveplot = FALSE, ...)
 }
 %- maybe also "usage" for other objects documented here.
 \arguments{
   \item{otutab}{
-A otu table of microbial community, without a taxonomy column.
+A OTU table of microbial community, without a taxonomy column.
 }
   \item{env}{
-Optional, a environmental table, which should contains the same samples as the otu table. If given, a constrained ordination will be processed. If env is NULL as default, the ordination will be unconstrained.
+Optional, a environmental table, which should contains the same samples as the OTU table. If given, a constrained ordination will be processed. If env is NULL as default, the ordination will be unconstrained.
 }
   \item{SiteInRow}{
 Logical, if "TRUE", the OTU table contains samples in rows and taxa in columns, as this function is dependent on several vegan functions and thus follows its data format. The function will transpose the otu table if "SiteInRow" is FALSE.
@@ -30,7 +30,7 @@ Logical, specify whether the input otu table are in relative abundance.
 Factor, specify the sample grouping in the ordination plot, which is NULL by default.
 }
   \item{ordtype}{
-Character, specify the type of ordination, the valid choice are c("urda","ucca","unmds") for unconstrained ordination, and c("c_rda","c_cca","c_nmds") for constrained ones.
+Character, specify the type of ordination, the valid choice are c("urda", "ucca", "unmds") for unconstrained ordination, and c("c_rda", "c_cca", "c_nmds") for constrained ones.
 }
   \item{scale}{
 Logical, whether scale species to unit variance (like correlations).
@@ -39,7 +39,7 @@ Logical, whether scale species to unit variance (like correlations).
 Character, to access scores for "sites" or "species".
 }
   \item{choices}{
-Numeric, vector of length two. Specify which axes to be shown, e.g. choices=1:2, choices=c(1,3).
+Numeric, vector of length two. Specify which axes to be shown, e.g. choices = 1:2, choices = c(1,3).
 }
   \item{biplot}{
 Logical, draws a biplot with species scores indicated by biplot arrows, only works in unconstrained ordination.
@@ -63,12 +63,12 @@ The function wrapped several vegan functions in order to quickly have a diagnost
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-%%  \item{comp1 }{Description of "comp1"}
-%%  \item{comp2 }{Description of "comp2"}
+%%  \item{comp1 }{Description of 'comp1'}
+%%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
 \references{
-Oksanen J, Blanchet FG, Kindt R, Legendre P, Minchin PR, O'Hara RB et al (2013). vegan: Community Ecology Package. R package version 2.0-7. http://CRAN.R-project.org/package=vegan.
+Oksanen J, Blanchet FG, Kindt R, Legendre P, Minchin PR, O"Hara RB et al (2013). vegan: Community Ecology Package. R package version 2.0-7. http://CRAN.R-project.org/package=vegan.
 }
 \author{
 Sizhong Yang <yanglzu@163.com>
@@ -90,10 +90,10 @@ ordination(otutab = varespec, env = NULL, SiteInRow = TRUE, percent = FALSE,
     mySite = NULL, ordtype = "urda", display = "sites", biplot = FALSE,
     legPos = "bottomright", showsite = FALSE, saveplot = FALSE)
 
-ordination(otutab = varespec, env = varechem, SiteInRow =TRUE, percent=FALSE,
+ordination(otutab = varespec, env = varechem, SiteInRow = TRUE, percent = FALSE,
     mySite = NULL, ordtype = "c_rda", display = "sites", biplot = FALSE,
-    legPos = "bottomright", showsite = FALSE, scale=TRUE)
+    legPos = "bottomright", showsite = FALSE, scale = TRUE)
 }
-% Add one or more standard keywords, see file "KEYWORDS" in the
+% Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{aplot }% use one of  RShowDoc("KEYWORDS")
+\keyword{aplot }% use one of  RShowDoc('KEYWORDS')
