@@ -13,7 +13,7 @@ typeConvert(otutab,taxhead = NULL)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{otutab}{
-A otu table, which can contain taxonomy. The otu table can be given in numeric counts or in relative abundance.
+An OTU table, which can contain no taxonomy. The OTU table can be given in numeric counts or in relative abundance.
 }
   \item{taxhead}{
 Character, specify the header of taxonomy. By default the taxonomic column is NULL.
@@ -23,7 +23,7 @@ Character, specify the header of taxonomy. By default the taxonomic column is NU
 This function is to convert the numeric values into right type so that the downstream numeric calculation could be processed without type error.
 }
 \value{
-This function returns a transposed otu table. In the source otu table the numeric values showing 'character' or 'factor' will be converted to right types.
+This function returns a transposed OTU table. In the source OTU table the numeric values showing "character" or "factor" will be converted to right types.
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
@@ -47,9 +47,9 @@ Sizhong Yang <yanglzu@163.com>
 \examples{
 data(otu4type)
 sapply(otu4type, class)
-new <- typeConvert(as.data.frame(t(otu4type)), taxhead='taxonomy')
+new <- typeConvert(as.data.frame(t(otu4type)), taxhead = "taxonomy")
 sapply(new, class)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{convert }% use one of  RShowDoc("KEYWORDS")
+\keyword{convert }% use one of  RShowDoc('KEYWORDS')
