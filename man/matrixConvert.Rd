@@ -8,7 +8,7 @@ Convert lower triangular distance matrix into data frame
 This function will convert lower triangular distance matrix into a 3-column, long-format data frame.
 }
 \usage{
-matrixConvert(triMatrix, colname = c("sp1","sp2","dist"))
+matrixConvert(triMatrix, colname = c("sp1", "sp2", "dist"))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -45,9 +45,9 @@ Sizhong Yang <yanglzu@163.com>
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-data(varespec, package="vegan")
-mat <- vegdist(varespec, method="bray")
-mat.m <- matrixConvert(varespec, colname = c("sp1","sp2","bray"))
+data(varespec, package = "vegan")
+mat <- vegdist(varespec, method = "bray")
+mat.m <- matrixConvert(varespec, colname = c("sp1", "sp2", "bray"))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
