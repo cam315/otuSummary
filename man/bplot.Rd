@@ -62,8 +62,8 @@ arguments to be passed to/from other methods.
 \examples{
 data(otumothur)
 
-summaryInfo <- otuReport(otutab=otumothur, siteInCol=TRUE, taxhead='taxonomy',
-    platform = 'qiime', percent=FALSE, level='phylum', collap = ";")
+summaryInfo <- otuReport(otutab = otumothur, siteInCol = TRUE, taxhead = "taxonomy",
+    platform = "qiime", percent = FALSE, level = "phylum", collap = ";")
 
 length(summaryInfo)
 names(summaryInfo)
