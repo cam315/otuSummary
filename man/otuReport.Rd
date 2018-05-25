@@ -93,7 +93,7 @@ summaryInfo <- otuReport(otutab = otumothur, siteInCol = TRUE, taxhead = "taxono
 length(summaryInfo)
 names(summaryInfo)
 summaryInfo[[1]]
-op <- par(mar = c(8,4,2,1)+0.1)
+op <- par(mar = c(8,6,2,1)+0.1)
 bplot(summaryInfo[["taxaFreqs"]])
 par(op)
 
