@@ -89,7 +89,7 @@ summaryInfo[[1]]
 
 data(otumothur)
 summaryInfo <- otuReport(otutab = otumothur, siteInCol = TRUE, taxhead = "taxonomy",
-    platform = "qiime", pattern = ";", percent = FALSE, level = "phylum", collap = ";")
+    platform = "mothur", pattern = ";", percent = FALSE, level = "phylum", collap = ";")
 length(summaryInfo)
 names(summaryInfo)
 summaryInfo[[1]]
