@@ -8,7 +8,7 @@ Generate barplot with custom controls on the x axis labels
 barplot with custom controls on the x axis labels, e.g. rotation.
 }
 \usage{
-bplot(data, srt = 45, yoff = 0.05, dataoff = 0.025, barcol = "grey", grid = TRUE, ...)
+bplot(data, srt = 45, yoff = 0.05, dataoff = 0.025, barcol = "grey", cex.txt = 1.0, grid = TRUE, datalabel = FALSE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -27,8 +27,14 @@ Numeric, vertical offset of data labels in relation to the bar height.
   \item{barcol}{
 Character, color of bar. By default is grey.
 }
+  \item{cex.txt}{
+Numeric value to scale the x axis labels in relative to the default.
+}
   \item{grid}{
 Logical, whether show the grids in the plot.
+}
+  \item{datalabel}{
+Logical, whether to show the data labels for each bar in the plot.
 }
   \item{...}{
 arguments to be passed to/from other methods.
