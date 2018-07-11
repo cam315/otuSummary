@@ -1,4 +1,4 @@
-bplot <- function(data, srt = 45, yoff = 0.05, dataoff = 0.025, barcol = "grey", grid = TRUE, ...){
+bplot <- function(data, srt = 45, yoff = 0.05, dataoff = 0.025, barcol = "grey", cex.txt = 1.0, grid = TRUE, datalabel = FALSE, ...){
   message("This function only works with numeric vector or table object")
   if (is.vector(data)|is.table(data)) {
     a <- barplot(height = data, space=0.75, ylim = range(0, 1.1*max(data)),
@@ -8,9 +8,11 @@ bplot <- function(data, srt = 45, yoff = 0.05, dataoff = 0.025, barcol = "grey",
     if(!is.null(names(data))){
       axis(1, labels = FALSE, at = a, ...)
       text(x = a, y = par("usr")[3] - yoff*max(data), labels= names(data), srt = srt,
-           xpd = TRUE, adj = c(1,0.5), cex = 0.8, font= 3, ...)
+           xpd = TRUE, adj = c(1,0.5), cex = cex.txt, font= 3, ...)
     }
-    text(x = a, y = data + dataoff*max(data), labels = data, ...)
+    if(datalabel){
+      text(x = a, y = data + dataoff*max(data), labels = data, ...)
+    }
     box()
     rm(a)
   } else stop("Input data should be a vector or a table object")
