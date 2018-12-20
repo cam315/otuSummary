@@ -23,7 +23,7 @@ Suggestion: please install this package in R3.3 or R3.5 on windows (available at
     citation("otuSummary")
 
 ##### Comments or suggestions
-    If you have any comments or suggestions, please do not be hesitate to post on my github or drop me a mail to me.
+If you have any comments or suggestions, please do not be hesitate to post on my github or drop me a mail to me.
     
 
 
