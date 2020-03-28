@@ -33,7 +33,7 @@ otuReport <- function(otutab, siteInCol=TRUE, taxhead='taxonomy', platform ='mot
     taxa = sapply(taxa, function(x) seperation(x,pattern))
     lineage = lapply(1:7, function(i)
       sapply(strsplit(as.character(taxa), split = pattern),
-             function(x) paste(x[1:i],sep='',collapse='->')))
+             function(x) paste(x[1:i],sep='',collapse = collap)))
   }
   names(lineage)= c('kingdom','phylum','class','order','family','genus','species')
   TaxaFreq = sapply(lineage, table)
