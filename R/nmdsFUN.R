@@ -5,9 +5,9 @@ nmdsFUN <- function(otutab, env=NULL, mySite=NULL, choices=1:2, display = "sites
   pchx = pchChoose(mySite)
   my.col = colChoose(mySite)
   if(is.null(mySite)) {my.site = as.factor(rep("site",nrow(otutab)))
-    legends = FALSE
+  legends = FALSE
   } else { my.site = mySite
-    legends = TRUE}
+  legends = TRUE}
   print(summary(obj))
   axes = paste0("NMDS", choices)
   xlbl = paste(axes[1], getpropX(obj, choices))

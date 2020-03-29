@@ -10,13 +10,13 @@ uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:
   xlbl = paste(axes[1], getpropX(obj, choices))
   ylbl = paste(axes[2], getpropY(obj, choices))
 
-  if(is.null(mySite)) {my.site = as.factor(rep("site",nrow(otutab)))
+  if(is.null(mySite)) {my.site = as.factor(rep('site',nrow(otutab)))
   legends = FALSE
   } else { my.site = mySite
   legends= TRUE}
 
   if(biplot){
-    biplot(obj, scaling = 3, choices = choices, cex.lab = 1.5, cex.axis=1.2,
+    biplot(obj, scaling = 3, choices = choices, cex.lab=1.5,cex.axis=1.2,
            main = "Unconstrained CA biplot - scaling 3", choices=choices)
     if(legends){
       legs = levels(mySite)
@@ -30,7 +30,7 @@ uCCA <- function(otutab, scale = FALSE, mySite = NULL, plot = TRUE, choices = 1:
                    useDingbats = FALSE)
   }else{
     plot(obj,type="n",xlab = xlbl, ylab = ylbl, cex.lab = 1.5, cex.axis=1.2,choices = choices,
-         main = paste("Unconstrained CA plot for",deparse(substitute(otutab))), ...)
+         main = paste0("Unconstrained CA plot for ",deparse(substitute(otutab))), ...)
     abline(h=0,v=0,lty="dashed", col="grey")
     points(obj, display="sites", choices = choices, cex=1.2, pch= pchx[my.site],
            col=my.col[my.site], bg=my.col[my.site], choices=choices)
