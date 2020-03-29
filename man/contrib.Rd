@@ -17,7 +17,7 @@ contrib(otutab, siteInCol = TRUE, taxhead = NULL, threshold = 1, percent = FALSE
 An OTU table of microbial community, which can contain taxonomy in a column or a row.
 }
   \item{siteInCol}{
-Logical, if 'TRUE', the OTU table contains samples in columns and taxa in rows. The function will decide whether to transpose the OTU table based on this parameter.
+Logical, if "TRUE", the OTU table contains samples in columns and taxa in rows. The function will decide whether to transpose the OTU table based on this parameter.
 }
   \item{taxhead}{
 Character, specify the header of taxonomy, e.g. "taxonomy" if there is a taxonomy column or row. It is NULL by default.
@@ -59,19 +59,15 @@ Yang S, Winkel M, Wagner D, Liebner S (2017). Community structure of rare methan
 \author{
 Sizhong Yang <yanglzu@163.com>
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 data(otuqiime)
+
 result <- contrib(otutab = otuqiime, siteInCol = TRUE, taxhead = "taxonomy",
-    threshold = 1, percent = FALSE, check = "abund", plot = TRUE)
+    threshold = 1, percent = FALSE, check = "abund", plot = FALSE)
+
 names(result)
 head(result)
 }

@@ -29,26 +29,15 @@ The function returns long format of data frame, with 3 columns. The first two co
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Sizhong Yang <yanglzu@163.com>
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
-data(varespec, package = "vegan")
+data(varespec)  # A data frame in package vegan
 mat <- vegdist(varespec, method = "bray")
 mat.m <- matrixConvert(varespec, colname = c("sp1", "sp2", "bray"))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{convert }% use one of  RShowDoc("KEYWORDS")
+%%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

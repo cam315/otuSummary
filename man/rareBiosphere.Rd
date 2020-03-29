@@ -1,6 +1,6 @@
 \name{rareBiosphere}
 \alias{rareBiosphere}
-%- Also NEED an '\alias' for EACH other topic documented here.
+%- Also NEED an "\alias" for EACH other topic documented here.
 \title{
 Summarize different subgroups in the rare biosphere
 }
@@ -11,7 +11,7 @@ The function discriminates different fractions of rare biosphere from the input 
 rareBiosphere(otutab, siteInCol = TRUE, taxhead= NULL, percent = FALSE,
     threshold = 1, cutRatio = 100, cutPERare = 5, ...)
 }
-%- maybe also 'usage' for other objects documented here.
+%- maybe also "usage" for other objects documented here.
 \arguments{
   \item{otutab}{
 An OTU table of microbial community, which can contain a taxonomic column (if siteInCol) or row (if site in rows). Note this function requires the otu table must be given in absolute counts, not in relative abundance.
@@ -62,15 +62,9 @@ Yang S, Winkel M, Wagner D, Liebner S (2017). Community structure of rare methan
 \author{
 Sizhong Yang <yanglzu@163.com>
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 data(otumothur)
 
@@ -87,6 +81,6 @@ length(example2)
 names(example2)
 }
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
+% Add one or more standard keywords, see file "KEYWORDS" in the
 % R documentation directory.
-\keyword{summarize }% use one of  RShowDoc('KEYWORDS')
+\keyword{summarize }% use one of  RShowDoc("KEYWORDS")
