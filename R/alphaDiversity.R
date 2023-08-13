@@ -21,13 +21,13 @@ alphaDiversity <- function(otutab, siteInCol = FALSE, taxhead = NULL, threshold 
   data <- list(per, abund, rare)
   result <- vector("list",length = 3)
   result <- lapply(1:3, function(i) data.frame(
-    observed = specnumber(data[[i]]),
-    shannon = diversity(data[[i]], "shannon"),
-    simperson = diversity(data[[i]], "simpson"),
-    invsimperson = diversity(data[[i]], "invsimpson"),
+    observed = apply(data[[i]], 1, function(x) sum(x>0)),
+    shannon = apply(data[[i]], 1, function(x) calc_shannon(data=x,base=exp(1)),
+    ssimperson = apply(data[[i]], 1, function(x) calc_simpson(data=x,index ='simpson')),
+    invsimperson = apply(data[[i]], 1, function(x) calc_simpson(data=x,index ='invsimpson')),
     chao1 = apply(data[[i]], 1, function(x) fossil::chao1(x)),
     chao2 = apply(data[[i]], 1, function(x) fossil::chao2(x)),
-    evenness = diversity(data[[i]], "shannon")/specnumber(data[[i]]),
+    evenness = shannon/observed,
     Gini = apply(data[[i]], 1, function(x) reldist::gini(x))
   ))
   names(result) = c("allBio","abundBio","rareBio")
