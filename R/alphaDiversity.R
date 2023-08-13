@@ -23,7 +23,7 @@ alphaDiversity <- function(otutab, siteInCol = FALSE, taxhead = NULL, threshold 
   result <- lapply(1:3, function(i) data.frame(
     observed = apply(data[[i]], 1, function(x) sum(x>0)),
     shannon = apply(data[[i]], 1, function(x) calc_shannon(data=x,base=exp(1)),
-    ssimperson = apply(data[[i]], 1, function(x) calc_simpson(data=x,index ='simpson')),
+    simperson = apply(data[[i]], 1, function(x) calc_simpson(data=x,index ='simpson')),
     invsimperson = apply(data[[i]], 1, function(x) calc_simpson(data=x,index ='invsimpson')),
     chao1 = apply(data[[i]], 1, function(x) fossil::chao1(x)),
     chao2 = apply(data[[i]], 1, function(x) fossil::chao2(x)),
