@@ -25,8 +25,8 @@ alphaDiversity <- function(otutab, siteInCol = FALSE, taxhead = NULL, threshold 
     shannon = apply(data[[i]], 1, function(x) calc_shannon(data=x,base=exp(1)),
     simperson = apply(data[[i]], 1, function(x) calc_simpson(data=x,index ='simpson')),
     invsimperson = apply(data[[i]], 1, function(x) calc_simpson(data=x,index ='invsimpson')),
-    chao1 = apply(data[[i]], 1, function(x) fossil::chao1(x)),
-    chao2 = apply(data[[i]], 1, function(x) fossil::chao2(x)),
+    chao1 = apply(data[[i]], 1, function(x) calc_chao1(x)),
+    chao2 = apply(data[[i]], 1, function(x) calc_chao2(x)),
     evenness = shannon/observed,
     Gini = apply(data[[i]], 1, function(x) reldist::gini(x))
   ))
