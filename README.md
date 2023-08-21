@@ -3,7 +3,7 @@
 
 This package contains some functions which summarize the taxonomic composition, diversity at given taxonomic level, the contribution to beta diversity (Bray-Curtis dissimilarity) of the rare and abundant biospheres by using the OTU table which was generated either by qiime or mothur. 
 
-Suggestion: please install this package in R >=3.5 on windows (available at https://cran.r-project.org/bin/windows/base/rtest.html). 
+Suggestion: please install this package in R >=3.5 on windows.
 
 ##### How to install this package from github?
 
