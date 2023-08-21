@@ -36,11 +36,7 @@ arguments to be passed to write.table().
 }
 }
 \details{
-<<<<<<< HEAD
-The rare biosphere is defined by the relative abundance cutoffs (which is the "threshold" argument in this function) (Lynch and Neufeld, 2015). This new version added custom function to remove dependencies on the functions "specnumber", "diversity" from package vegan (Oksanen et al, 2013), "chao1" and "chao2" from package fossil (Vavrek, 2011). In addition, the "gini" function from package reldist (http://www.stat.ucla.edu/~handcock/RelDist) was removed from this version.
-=======
 The rare biosphere is defined by the relative abundance cutoffs (which is the "threshold" argument in this function) (Lynch and Neufeld, 2015). This update (version 0.1.2) removed the dependencies on functions "specnumber", "diversity" and "estimateR" from the R package "vegan" (Oksanen et al, 2013), and removed the "gini" function from package 'reldist' (http://www.stat.ucla.edu/~handcock/RelDist).
->>>>>>> master
 }
 \value{
 The function will return a list of length 3, including indices of observed, shannon, simpson, invsimpson, chao1, chao2, and evenness.
