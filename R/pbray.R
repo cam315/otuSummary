@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #pbray <- function(allComm, subComm, tolower = TRUE) {
 #  allComm <- as.matrix(allComm)
 #  subComm <- as.matrix(subComm)
@@ -24,6 +25,8 @@
 #  if(!tolower) distmatrix <- as.matrix(distmatrix)
 #  invisible(distmatrix)
 #}
+=======
+>>>>>>> master
 
 pbray <- function(allComm, subComm, tolower = TRUE) {
   allComm <- as.matrix(allComm)
@@ -35,7 +38,10 @@ pbray <- function(allComm, subComm, tolower = TRUE) {
   denominator = as.dist(outer(rsum, rsum, FUN="+"))
   numerator = dist(subComm, method = 'minkowski', p =1) ## will cal |xi -yi|
   mat = numerator/denominator
+<<<<<<< HEAD
 #  mat[lower.tri(mat)] <- tmp
+=======
+>>>>>>> master
   distmatrix <- as.dist(mat)
   if(!tolower) distmatrix <- as.matrix(distmatrix)
   invisible(distmatrix)

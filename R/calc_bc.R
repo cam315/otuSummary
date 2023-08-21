@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # script to calculate Bray-Curtis dissimilarity matrix
 ## BC is calculated based on the function (BCij = 1 – (2*Cij) / (Si + Sj)), where
 ## Cij: The sum of the lesser values for the species found in each site.
@@ -23,6 +24,8 @@
 #  return(mat2)
 #}
 
+=======
+>>>>>>> master
 calc_bc <- function(df){
     ## please note that the OTU table (df) must be with sites in rows and species in columns
     nr = nrow(df)

@@ -1,6 +1,6 @@
 \name{typeConvert}
 \alias{typeConvert}
-%- Also NEED an '\alias' for EACH other topic documented here.
+%- Also NEED an "\alias" for EACH other topic documented here.
 \title{
 Transpose the data frame if there is data type conversion.
 }
@@ -29,21 +29,12 @@ This function returns a transposed OTU table. In the source OTU table the numeri
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Sizhong Yang <yanglzu@163.com>
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 data(otu4type)
 sapply(otu4type, class)

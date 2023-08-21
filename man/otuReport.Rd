@@ -9,7 +9,7 @@ The function will summarize the frequency, abundance at given taxonomic level fo
 }
 \usage{
 otuReport(otutab, siteInCol = TRUE, taxhead = "taxonomy", platform = "mothur",
-    pattern = ";", prefix = TRUE, percent = FALSE, level = "phylum",
+    pattern = ";", prefix = TRUE, percent = FALSE, taxlevel = "phylum",
     collap = "->")
 }
 %- maybe also 'usage' for other objects documented here.
@@ -35,7 +35,7 @@ Logical, tell the function whether the output will include the prefix like "p__"
   \item{percent}{
 Logical, whether the input otu table are given in relative abundance. FALSE means that the input otu table is in numeric counts.
 }
-  \item{level}{
+  \item{taxlevel}{
 Character, specify the taxonomic level at which you want to know for the otu table. The valid choice are c("kingdom", "phylum", "class", "order", "family", "genus", "species").
 }
   \item{collap}{
@@ -60,27 +60,23 @@ If the input otu table is in counts, the function will return a list of results 
 For the relative abundance otu input, the function will omit four summary table regarding absolute reads ("reads", "readSum", "readFrac" and "readFracSum").
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Sizhong Yang <yanglzu@163.com>
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-subOTU
+subOTU, otuCollap
 }
 \examples{
 # summary the otu table in qiime format
 
 data(otuqiime)
+
 summaryInfo <- otuReport(otutab = otuqiime, siteInCol = TRUE, taxhead = "taxonomy",
-    platform = "qiime", pattern = ";", prefix = TRUE, percent  =FALSE, level = "class")
+    platform = "qiime", pattern = ";", prefix = TRUE, percent = FALSE, taxlevel = "class")
+
 length(summaryInfo)
 names(summaryInfo)
 summaryInfo[[1]]
@@ -88,7 +84,9 @@ summaryInfo[[1]]
 # summary otu table in mothur format
 
 data(otumothur)
+
 summaryInfo <- otuReport(otutab = otumothur, siteInCol = TRUE, taxhead = "taxonomy",
+<<<<<<< HEAD
     platform = "mothur", pattern = ";", percent = FALSE, level = "phylum", collap = ";")
 length(summaryInfo)
 names(summaryInfo)
@@ -96,6 +94,13 @@ summaryInfo[[1]]
 op <- par(mar = c(8,6,2,1)+0.1)
 bplot(summaryInfo[["taxaFreqs"]])
 par(op)
+=======
+    platform = "qiime", pattern = ";", percent = FALSE, taxlevel = "phylum", collap = ";")
+
+length(summaryInfo)
+names(summaryInfo)
+summaryInfo[[1]]
+>>>>>>> master
 
 # summary otu table of relative abundance
 
@@ -103,7 +108,7 @@ per <- subOTU(otutab = otuqiime, siteInCol = TRUE, taxhead = "taxonomy",
     percent = FALSE, choose = "all", outype = "Relabund", sort = TRUE)
 
 summaryInfo <- otuReport(otutab = per, siteInCol = TRUE, taxhead = "taxonomy",
-    platform = "qiime", pattern = ";", percent = TRUE, level = "class")
+    platform = "qiime", pattern = ";", percent = TRUE, taxlevel = "class")
 
 length(summaryInfo)
 names(summaryInfo)

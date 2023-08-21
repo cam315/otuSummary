@@ -1,6 +1,6 @@
 \name{pbray}
 \alias{pbray}
-%- Also NEED an '\alias' for EACH other topic documented here.
+%- Also NEED an "\alias" for EACH other topic documented here.
 \title{
 Partition the Bray-Curtis distance dissimilarity
 }
@@ -10,7 +10,7 @@ The pbray function partitions the Bray-Curtis distance matrix based on the who c
 \usage{
 pbray(allComm, subComm, tolower = TRUE)
 }
-%- maybe also 'usage' for other objects documented here.
+%- maybe also "usage" for other objects documented here.
 \arguments{
   \item{allComm}{
 A otu table of microbial community which contains sample in rows and taxa in column. The otu table should not contain a taxonomic column.
@@ -29,6 +29,10 @@ Logical, by default the function returns the lower triangular matrix.
 }
 \value{
 The function returns a distance matrix by using the subset community against the whole community data.
+%%  If it is a LIST, use
+%%  \item{comp1 }{Description of "comp1"}
+%%  \item{comp2 }{Description of "comp2"}
+%% ...
 }
 \references{
 Shade A, Jones SE, Caporaso JG, Handelsman J, Knight R, Fierer N, and Gilbert JA. Conditionally rare taxa disproportionately contribute to temporal changes in microbial diversity. Mbio, 2014, 5(4): e01371-01314.
@@ -38,10 +42,6 @@ Yang S, Winkel M, Wagner D, and Liebner S. Community structure of rare methanoge
 \author{
 Sizhong Yang <yanglzu@163.com>
 }
-\note{
-%%  ~~further notes~~
-}
-
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
@@ -51,7 +51,7 @@ function contrib(), matrixConvert().
 data(otumothur)
 
 subotus <- subOTU(otutab = otumothur, taxhead = "taxonomy", siteInCol = TRUE,
-    percent=FALSE, choose = "rare", outype = "counts", sort = FALSE)
+    percent = FALSE, choose = "rare", outype = "counts", sort = FALSE)
 pRare <- pbray(allComm = t(otumothur[,-454]), subComm = t(subotus[,-454]))
 class(pRare)
 
@@ -59,6 +59,6 @@ class(pRare)
 
 longdist <- matrixConvert(pRare, colname = c("sp1", "sp2", "bray"))
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
+% Add one or more standard keywords, see file "KEYWORDS" in the
 % R documentation directory.
-\keyword{patition }% use one of  RShowDoc('KEYWORDS')
+\keyword{patition }% use one of  RShowDoc("KEYWORDS")
