@@ -5,7 +5,7 @@
 Contribution of rare/abundant biosphere to the total Bray-Curtis dissimilarity
 }
 \description{
-function to calculate the contribution (in fraction) of the abundant or rare biosphere to the Bray-Curtis dissimilarity of the whole community.
+A function to calculate the contribution (in fraction) of the abundant or rare biosphere to the Bray-Curtis dissimilarity of the whole community.
 }
 \usage{
 contrib(otutab, siteInCol = TRUE, taxhead = NULL, threshold = 1, percent = FALSE,
