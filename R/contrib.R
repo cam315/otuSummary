@@ -21,7 +21,8 @@ contrib <- function(otutab, siteInCol=TRUE, taxhead=NULL, threshold = 1, percent
   } else {stop("Invalid choice! Work only for abundant and rare biosphere")}
   print(paste("Dimemsion of subsampled taxa table", dim(sub)[1],"rows,",dim(sub)[2], "columns"))
   distp <- pbray(allComm = relabund, subComm = sub)
-  distot <- vegdist(relabund, method ='bray')
+  ## distot = vegdist(relabund, method='bray')
+  distot <- calc_bc(relabund)
   r1 <- matrixConvert(distp,colname = c("sample1","sample2","pBrayCurtis"))
   r2 <- matrixConvert(distot,colname = c("sample1","sample2","totalBrayCurtis"))
   r3 <- matrixConvert(distp/distot,colname = c("sample1","sample2","Contribution"))

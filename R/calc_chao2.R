@@ -1,4 +1,5 @@
-chao2 <- function(vec){
+
+calc_chao2 <- function(vec){
   q0 <- length(vec[vec > 0])
   q1 <- length(vec[vec == 1])
   q2 <- length(vec[vec == 2])
