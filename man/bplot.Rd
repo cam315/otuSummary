@@ -34,36 +34,11 @@ Logical, whether show the grids in the plot.
 arguments to be passed to/from other methods.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 data(otumothur)
 
 summaryInfo <- otuReport(otutab = otumothur, siteInCol = TRUE, taxhead = "taxonomy",
-    platform = "qiime", percent = FALSE, level = "phylum", collap = ";")
+    platform = "qiime", percent = FALSE, taxlevel = "phylum", collap = ";")
 
 length(summaryInfo)
 names(summaryInfo)
@@ -73,4 +48,4 @@ bplot(summaryInfo[["taxaFreqs"]])
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{aplot }% use one of  RShowDoc("KEYWORDS")
+\keyword{plot }% use one of  RShowDoc("KEYWORDS")
