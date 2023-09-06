@@ -52,7 +52,7 @@ data(otumothur)
 
 subotus <- subOTU(otutab = otumothur, taxhead = "taxonomy", siteInCol = TRUE,
     percent = FALSE, choose = "rare", outype = "counts", sort = FALSE)
-pRare <- pbray(allComm = t(otumothur[,-454]), subComm = t(subotus[,-454]))
+pRare <- pbray(allComm = t(otumothur[,-ncol(otumothur)]), subComm = t(subotus[,-ncol(otumothur)]))
 class(pRare)
 
 # convert to long format data frame
