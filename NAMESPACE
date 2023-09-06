@@ -1,4 +1,4 @@
-export(alphaDiversity, contrib, matrixConvert, otuReport, otuCollap,
+export(alphaDiversity, bplot, contrib, matrixConvert, otuReport, otuCollap,
 	calc_bc,pbray, fillTax, fillTax2, slimTax, rareBiosphere, subOTU,
 	typeConvert)
 importFrom("reshape2", "melt")
