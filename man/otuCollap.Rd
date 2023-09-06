@@ -62,4 +62,4 @@ dim(result)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{summarize }% use one of  RShowDoc('KEYWORDS')
+\keyword{summarize }
