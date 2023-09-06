@@ -1,9 +1,9 @@
-slimTax <- function(taxonomy, from, to, separator =';', jump=FALSE){
+slimTax <- function(x, from, to, separator =';', jump=FALSE){
   ## this only works for the taxonomy with all levels
   ## pre = c("d","p","c","o","f","g",'s'), meaning 7 levels in total
   ## jump means only take the tax of from and to, excluding those in between
-  fillTaxAll <- function(x, split = ';', prefix=TRUE){
-    tax = strsplit(x, split)
+  fillTaxAll <- function(taxStr, split = ';', prefix=TRUE){
+    tax = strsplit(taxStr, split)
     ## tax is a list of strings
     taxlevel = c("d","p","c","o","f","g",'s')
     lasTax <- function(st, pref = prefix){
@@ -16,7 +16,7 @@ slimTax <- function(taxonomy, from, to, separator =';', jump=FALSE){
 	}
 	if(!is.na(match('',y))){
 	    ## find the index of first match with none 'taxonomy'
-          id = match('',y)
+            id = match('',y)
 	    y[id:length(taxlevel)] = y[id-1]
 	    pre = taxlevel ## keep pre as the last top point
 	    out = paste(pre, y, sep='__')
@@ -29,7 +29,7 @@ slimTax <- function(taxonomy, from, to, separator =';', jump=FALSE){
     res = sapply(res, function(x) paste(x, collapse=';'))  ## join into one long-string
     return(res)
   }
-  tax = fillTaxAll(taxonomy)
+  tax = fillTaxAll(x)
   if(jump) out = sapply(strsplit(tax, split= separator), function(x) paste(x[c(from,to)], collapse=separator))
   else out = sapply(strsplit(tax, split= separator), function(x) paste(x[from:to], collapse=separator))
   return(out)
