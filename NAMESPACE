@@ -1,7 +1,6 @@
 export(alphaDiversity, contrib, matrixConvert, otuReport, otuCollap,
-	calc_chao1, calc_chao2, calc_shannon, calc_simpson,calc_bc,
-	pbray, fillTax, fillTax2, slimTax,rareBiosphere, subOTU,
-	 typeConvert)
+	calc_bc,pbray, fillTax, fillTax2, slimTax, rareBiosphere, subOTU,
+	typeConvert)
 importFrom("reshape2", "melt")
 importFrom("grDevices", "dev.copy2pdf", "rainbow")
 importFrom("graphics", "abline", "arrows", "axis", "box", "boxplot", "legend",
