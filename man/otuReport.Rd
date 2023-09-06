@@ -10,7 +10,7 @@ The function will summarize the frequency, abundance at given taxonomic level fo
 \usage{
 otuReport(otutab, siteInCol = TRUE, taxhead = "taxonomy", platform = "mothur",
     pattern = ";", prefix = TRUE, percent = FALSE, taxlevel = "phylum",
-    collap = "->")
+    collap = ";")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
