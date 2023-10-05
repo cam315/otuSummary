@@ -27,7 +27,7 @@ alphaDiversity <- function(otutab, siteInCol = FALSE, taxhead = NULL, threshold 
     invsimperson = apply(data[[i]], 1, function(x) calc_simpson(data=x,index ='invsimpson')),
     chao1 = apply(data[[i]], 1, function(x) calc_chao1(x)),
     chao2 = apply(data[[i]], 1, function(x) calc_chao2(x)),
-    evenness = apply(data[[i]], 1, function(x) sum(x>0))/apply(data[[i]], 1, function(x) calc_shannon(data=x,base=exp(1)))
+    evenness = apply(data[[i]], 1, function(x) calc_shannon(data=x,base=exp(1)))/apply(data[[i]], 1, function(x) sum(x>0))
   ))
   names(result) = c("allBio","abundBio","rareBio")
   if(write){
